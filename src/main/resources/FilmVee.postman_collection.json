@@ -1,0 +1,183 @@
+{
+	"info": {
+		"_postman_id": "48f2c2c4-2dfe-4432-b574-1bca6ec60d20",
+		"name": "FilmVee",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29193922"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"rohitnighot0@gmail.com\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rohnit@gmail.com\",\r\n    \"password\":\"password\",\r\n    \"role\":{\r\n        \"roleId\":2,\r\n        \"role\":\"ADMIN\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8081/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "Get Movie List",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "JWT",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb2hpdEBnbWFpbC5jb20iLCJpYXQiOjE3MzMxMjQ1ODcsImV4cCI6MTczMzEyNTA4N30.u7syfDs3Ku28iVx1iv7EkKUdjUvUndFTikZmAJ7BUto",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/filmvee/fetch/movies-list",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"filmvee",
+								"fetch",
+								"movies-list"
+							],
+							"query": [
+								{
+									"key": "Authorization",
+									"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJEVVJHRVNIIiwiaWF0IjoxNzA5MjM1MDkzLCJleHAiOjE3MDkyNTMwOTN9.JHa0Wbrq988d-fWq8BdNkdDDDBb3G7QdOB5LuXDngzTUAbA5dvwXV1iw89QW2ghB0np-cWw7aeDVvgfMC2MVuw",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "JWT",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb2hpdEBnbWFpbC5jb20iLCJpYXQiOjE3MzMxMjQ1ODcsImV4cCI6MTczMzEyNTA4N30.u7syfDs3Ku28iVx1iv7EkKUdjUvUndFTikZmAJ7BUto",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/filmvee/fetch/movie-name?keyword=Fireflies",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"filmvee",
+								"fetch",
+								"movie-name"
+							],
+							"query": [
+								{
+									"key": "keyword",
+									"value": "Fireflies"
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sort Movie",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "JWT",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJyb2hpdG5pZ2hvdDBAZ21haWwuY29tIiwiaWF0IjoxNzMzMTUwNDcyLCJleHAiOjE3MzMxNTA5NzJ9.ojSF5NeOKnFfO2KuD_Ddyg9oTw50CjW52paoebj1zQ4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8081/filmvee/sort/movie-list?rating=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"filmvee",
+								"sort",
+								"movie-list"
+							],
+							"query": [
+								{
+									"key": "rating",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
